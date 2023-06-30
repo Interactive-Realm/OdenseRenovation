@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: neoSansIntel;
+  src: url(../assets/fonts/neo-sans-intel.ttf);
+}
+
 :root {
   /* Odense Renovation Colors */
   --clr-primary-green: #1a873a;
@@ -34,12 +39,13 @@
 
 /* Base */
 html {
+  font-family: neoSansIntel, Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--clr-white);
-    color: var(--clr-dark);
+  background-color: var(--clr-white);
+  color: var(--clr-dark);
 }
 
 li {
@@ -51,10 +57,93 @@ a {
   color: currentColor;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: neoSansIntel, Helvetica, Arial, sans-serif;
+}
+
 /* Header */
+#hero {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
+#hero h1 {
+  font-size: 5rem;
+}
 
-.cards {
+#game {
+  height: 100dvh;
+  padding-inline: 1rem;
+}
+
+/* Utilities */
+.wrapper {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.food-waste {
+  background-color: var(--clr-miljoestyrelsen-green);
+  color: var(--clr-light);
+}
+
+.glass {
+  background-color: var(--clr-miljoestyrelsen-cyan);
+  color: var(--clr-light);
+}
+
+.paper {
+  background-color: var(--clr-miljoestyrelsen-blue);
+  color: var(--clr-light);
+}
+
+.carton {
+  background-color: var(--clr-miljoestyrelsen-brown);
+  color: var(--clr-light);
+}
+
+.cardboard {
+  background-color: var(--clr-miljoestyrelsen-brown);
+  color: var(--clr-light);
+}
+
+.metal {
+  background-color: var(--clr-miljoestyrelsen-gray);
+  color: var(--clr-light);
+}
+
+.plastic {
+  background-color: var(--clr-miljoestyrelsen-purple);
+  color: var(--clr-light);
+}
+
+.textile {
+  background-color: var(--clr-miljoestyrelsen-purple);
+  color: var(--clr-light);
+}
+
+.hazardous-waste {
+  background-color: var(--clr-miljoestyrelsen-red);
+  color: var(--clr-light);
+}
+
+.residual-waste {
+  background-color: var(--clr-miljoestyrelsen-black);
+  color: var(--clr-light);
+}
+
+/* Elements */
+.scroll-link {
+  font-size: 1.5rem;
 }
 
 /* Flip card */
