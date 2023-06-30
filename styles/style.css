@@ -6,6 +6,54 @@
   padding: 0;
 }
 
+:root {
+  /* Odense Renovation Colors */
+  --clr-primary-green: #1a873a;
+  --clr-primary-green-variant: #39b54a;
+  --clr-primary-yellow: #ffec00;
+  --clr-primary-red: #b20215;
+  --clr-primary-blue: #4b92d1;
+  --clr-primart-purple: #613c74;
+  --clr-primary-cyan: #9ccac9;
+  --clr-primary-lime: #c3ce1c;
+  --clr-primary-orange: #d78300;
+  --clr-light: #fff;
+  --clr-dark: #212125;
+  --clr-gray: #96969a;
+
+  /* Miljoestyrelsen */
+  --clr-miljoestyrelsen-green: #1cb158;
+  --clr-miljoestyrelsen-brown: #bc9a6a;
+  --clr-miljoestyrelsen-blue: #0283c4;
+  --clr-miljoestyrelsen-gray: #566b7c;
+  --clr-miljoestyrelsen-cyan: #60c3ae;
+  --clr-miljoestyrelsen-purple: #913394;
+  --clr-miljoestyrelsen-red: #e20f1e;
+  --clr-miljoestyrelsen-black: #141414;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-white);
+    color: var(--clr-dark);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+/* Header */
+
+
 .cards {
 }
 
@@ -13,7 +61,7 @@
 .flip-card {
   width: 300px;
   height: 200px;
-  border: 2px solid white;
+  border: 2px solid var(--clr-light);
   perspective: 1000px;
 }
 
@@ -48,9 +96,9 @@
 }
 
 .flip-card__front {
-  background-color: green;
-  color: white;
-  border-color: white;
+  background-color: var(--clr-primary-green);
+  color: var(--clr-light);
+  border-color: var(--clr-light);
 }
 
 .flip-card__title {
@@ -59,8 +107,8 @@
 }
 
 .flip-card__back {
-  background-color: white;
+  background-color: var(--clr-light);
   color: black;
-  border-color: green;
+  border-color: var(--clr-primary-green);
   transform: rotateY(180deg);
 }
