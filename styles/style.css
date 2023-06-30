@@ -57,6 +57,7 @@ a {
   color: currentColor;
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -77,6 +78,25 @@ h6 {
 
 #hero h1 {
   font-size: 5rem;
+}
+
+.header {
+  position: relative;
+}
+
+.header__logo {
+}
+
+.header__title {
+  text-transform: uppercase;
+}
+
+/* Elements */
+.header__scroll-link {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 5rem;
+  inset-inline: auto;
 }
 
 #game {
@@ -139,11 +159,6 @@ h6 {
 .residual-waste {
   background-color: var(--clr-miljoestyrelsen-black);
   color: var(--clr-light);
-}
-
-/* Elements */
-.scroll-link {
-  font-size: 1.5rem;
 }
 
 /* Flip card */
