@@ -1,0 +1,29 @@
+/* Header */
+.header {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+}
+
+.header__logo {
+}
+
+.header__title {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+/* Elements */
+.header__scroll-link {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 5rem;
+  inset-inline: auto;
+}

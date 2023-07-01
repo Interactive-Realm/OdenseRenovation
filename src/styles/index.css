@@ -1,0 +1,10 @@
+@import "variables";
+@import "reset";
+@import "flip-card";
+@import "utilities";
+
+/* Game section */
+#game {
+  height: 100dvh;
+  padding-inline: 1rem;
+}

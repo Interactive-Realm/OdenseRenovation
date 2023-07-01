@@ -1,0 +1,56 @@
+/* Utilities */
+.wrapper {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.food-waste {
+  background-color: var(--clr-miljoestyrelsen-green);
+  color: var(--clr-light);
+}
+
+.glass {
+  background-color: var(--clr-miljoestyrelsen-cyan);
+  color: var(--clr-light);
+}
+
+.paper {
+  background-color: var(--clr-miljoestyrelsen-blue);
+  color: var(--clr-light);
+}
+
+.carton {
+  background-color: var(--clr-miljoestyrelsen-brown);
+  color: var(--clr-light);
+}
+
+.cardboard {
+  background-color: var(--clr-miljoestyrelsen-brown);
+  color: var(--clr-light);
+}
+
+.metal {
+  background-color: var(--clr-miljoestyrelsen-gray);
+  color: var(--clr-light);
+}
+
+.plastic {
+  background-color: var(--clr-miljoestyrelsen-purple);
+  color: var(--clr-light);
+}
+
+.textile {
+  background-color: var(--clr-miljoestyrelsen-purple);
+  color: var(--clr-light);
+}
+
+.hazardous-waste {
+  background-color: var(--clr-miljoestyrelsen-red);
+  color: var(--clr-light);
+}
+
+.residual-waste {
+  background-color: var(--clr-miljoestyrelsen-black);
+  color: var(--clr-light);
+}
