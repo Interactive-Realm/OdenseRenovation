@@ -13,6 +13,9 @@
 }
 
 .header__logo {
+  position: absolute;
+  left: 5rem;
+  top: 5rem;
 }
 
 .header__title {
