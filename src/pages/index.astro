@@ -1,4 +1,5 @@
 ---
+import FlashCard from '../components/FlashCard.astro';
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import "../styles/index.css";
@@ -18,20 +19,12 @@ import "../styles/index.css";
 			</p>
 
 			<div class="cards">
-				<div class="flip-card" tabindex="0">
-					<div class="flip-card__content">
-						<div class="flip-card__front">
-							<h3 class="flip-card__title">Fritureolie</h3>
-						</div>
-						<div class="flip-card__back">
-							<p>Mad- og fritureolie skal ikke hæles ud i vasken.</p>
-							<p>
-								De må gerne komme i madaffald gerne sammen med brød som kan
-								suge olien.
-							</p>
-						</div>
-					</div>
-				</div>
+				<FlashCard>
+					<!-- Front -->
+					<h3 slot="front">Fritureolie</h3>
+					<!-- Back -->
+					<p slot="back">Fritureolie skal i madaffald</p>
+				</FlashCard>
 			</div>
 		</section>
 
