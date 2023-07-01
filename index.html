@@ -17,33 +17,67 @@
     <title>Madaffald | Odense Renovation</title>
   </head>
   <body>
-    <header>
-      <h1>Her i Odense skal vi sortere efter 8 affaldstyper</h1>
-      <a href="#main">Scroll videre for mere information</a>
+    <header id="hero" class="header food-waste">
+      <div>
+        <a href="https://www.odenserenovation.dk/" class="header__logo">
+          <img
+            src="/assets/images/logo.svg"
+            alt="Odense Renovation logo"
+            class="header__logo__image"
+          />
+        </a>
+      </div>
+
+      <h1 class="header__title">Madaffald</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam,
+        exercitationem.
+      </p>
+
+      <a href="#main" class="header__scroll-link">
+        <p>Scroll videre for mere information</p>
+      </a>
     </header>
 
     <!-- Main -->
     <main id="main">
       <!-- How -->
-      <section>
+      <section class="wrapper">
         <h2>Hvad</h2>
         <p>
           Madaffald er affaldet, der kommer direkte fra madlavning. Madaffald er
           dog ikke den gamle grøn affald.
         </p>
+
+        <div class="cards">
+          <div class="flip-card" tabindex="0">
+            <div class="flip-card__content">
+              <div class="flip-card__front">
+                <h3 class="flip-card__title">Fritureolie</h3>
+              </div>
+              <div class="flip-card__back">
+                <p>Mad- og fritureolie skal ikke hæles ud i vasken.</p>
+                <p>
+                  De må gerne komme i madaffald gerne sammen med brød som kan
+                  suge olien.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <lottie-player id="lottiePlayer_RandomAnim" src="https://assets4.lottiefiles.com/packages/lf20_15vyYQNGMX.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;"></lottie-player>
 
       </section>
 
       <!-- How -->
-      <section>
+      <section class="wrapper">
         <h2>Hvordan</h2>
         <!-- TODO - Insert animation -->
         <p>animation...</p>
       </section>
 
       <!-- Hvorfor -->
-      <section>
+      <section class="wrapper">
         <h2>Hvorfor</h2>
         <p>
           Når du sorterer madaffald bidrager du med, at vi bruger færre nye
@@ -59,7 +93,7 @@
       </section>
 
       <!-- Read more -->
-      <section id="more">
+      <section id="more" class="wrapper">
         <h2>Læs mere om sortering</h2>
         <p>
           Odense Renovation har lavet en
