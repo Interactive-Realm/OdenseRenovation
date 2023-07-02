@@ -1,0 +1,26 @@
+---
+import type { NavLink } from "../logic/types";
+interface Props {
+  navLink: NavLink;
+}
+
+const { navLink } = Astro.props;
+---
+
+<li class="nav-item">
+  <a href={navLink.href} class="nav-item__link">
+    <img
+      src={navLink.image.src}
+      alt={navLink.image.alt}
+      class="nav-item__image"
+    />
+  </a>
+</li>
+
+<style>
+  .nav-item__image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  }
+</style>

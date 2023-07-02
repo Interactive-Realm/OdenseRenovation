@@ -1,19 +1,33 @@
+---
+import type { FlashCard } from "../logic/types";
+interface Props {
+  flashCard: FlashCard;
+}
+
+const { flashCard } = Astro.props;
+---
+
 <div class="flip-card" tabindex="0">
   <div class="flip-card__content">
     <div class="flip-card__front">
-      <slot name="front"> Front</slot>
+      <p class="flip-card__title">{flashCard.title}</p>
+      <img
+        src={flashCard.image.src}
+        alt={flashCard.image.alt}
+        class="flip-card__image"
+      />
     </div>
     <div class="flip-card__back">
-      <slot name="back">Back</slot>
+      <p>{flashCard.text}</p>
     </div>
   </div>
 </div>
 
 <style>
   .flip-card {
-    width: 300px;
-    height: 200px;
+    aspect-ratio: 1 / 1;
     perspective: 1000px;
+    cursor: pointer;
   }
 
   .flip-card__content {
@@ -41,14 +55,35 @@
     justify-content: center;
     gap: 1rem;
     border-radius: 0.25rem;
-    border: 0.5rem solid;
     padding: 0.5rem;
+    overflow: hidden;
   }
 
   .flip-card__front {
     background-color: var(--clr-primary-green);
     color: var(--clr-light);
-    border-color: var(--clr-light);
+    border-color: var(--clr-primary-green);
+  }
+
+  .flip-card__title {
+    z-index: 10;
+    word-wrap: break-word;
+  }
+
+  .flip-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    filter: brightness(60%);
+  }
+
+  .flip-card__back {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: 0.5rem solid;
+    z-index: 20;
   }
 
   .flip-card__title {
@@ -59,7 +94,7 @@
   .flip-card__back {
     background-color: var(--clr-light);
     color: black;
-    border-color: var(--clr-primary-green);
+    border-color: var(--clr-dark);
     transform: rotateY(180deg);
   }
 </style>

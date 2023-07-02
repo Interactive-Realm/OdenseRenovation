@@ -1,0 +1,23 @@
+---
+import { navLinks } from "../data/navigation.data";
+import NavLink from "./NavLink.astro";
+---
+
+<nav class="waste-navigation">
+  <ul class="waste-navigation__list">
+    {navLinks.map((navLink) => <NavLink navLink={navLink} />)}
+  </ul>
+</nav>
+
+<style>
+  .waste-navigation__list {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+  }
+
+  @media (min-width: 768px) {
+    .waste-navigation__list {
+      grid-template-columns: repeat(10, 10%);
+    }
+  }
+</style>

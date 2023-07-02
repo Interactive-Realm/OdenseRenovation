@@ -9,9 +9,10 @@
   --clr-primary-cyan: #9ccac9;
   --clr-primary-lime: #c3ce1c;
   --clr-primary-orange: #d78300;
-  --clr-light: #fff;
+  --clr-light: #fafafa;
   --clr-dark: #212125;
-  --clr-gray: #96969a;
+  --clr-gray: #b0b1b3;
+  --clr-text: #777777;
 
   /* Miljoestyrelsen */
   --clr-miljoestyrelsen-green: #00a04b;

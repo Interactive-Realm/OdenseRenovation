@@ -54,3 +54,12 @@
   background-color: var(--clr-miljoestyrelsen-black);
   color: var(--clr-light);
 }
+
+.background-pattern {
+  background-image: url(/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.section-description {
+  margin-bottom: 1rem;
+}
