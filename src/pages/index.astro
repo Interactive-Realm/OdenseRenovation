@@ -27,7 +27,7 @@ import "../styles/style.css";
         corporis eum.
       </p>
 
-      <div class="cards">
+      <!-- <div class="cards"> -->
         <!-- Correct Flashcards -->
         <div class="cards__container">
           {
@@ -36,7 +36,7 @@ import "../styles/style.css";
             ))
           }
         </div>
-
+        <div class="inserter"></div>
         <!-- Wrong Flashcards -->
         <div class="cards__container">
           {
@@ -45,7 +45,7 @@ import "../styles/style.css";
             ))
           }
         </div>
-      </div>
+      <!-- </div> -->
     </section>
 
     <!-- How -->
@@ -125,6 +125,8 @@ import "../styles/style.css";
   .cards__container {
     display: grid;
     gap: 1rem;
+    width: 50%; /* set card size */
+    margin: auto;  /* center alignment */
   }
 
   .cards {
@@ -135,5 +137,10 @@ import "../styles/style.css";
     .cards__container {
       grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+    /* in between correct/incorrect cards */
+  .inserter {
+    margin-top: 1rem;
   }
 </style>
