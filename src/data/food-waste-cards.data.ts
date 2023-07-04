@@ -1,5 +1,40 @@
 import type { FlashCard } from "../logic/types";
 
+export const flashcards: FlashCard[] = [
+  {
+    title: "Sovs og fedt",
+    text: "Fedt skal i madaffald. Olie kan med fordel sorteres sammen med brødskiver, så olien suges og ikke lægger sig i bunden af posen",
+    image: {
+      src: "/OdenseRenovation/images/cards/madaffald.jpg",
+      alt: "Madaffaldspose",
+    },
+  },
+  {
+    title: "Kaffe og te",
+    text: "Kaffe- og tefiltre sorteres som madaffald",
+    image: {
+      src: "/OdenseRenovation/images/cards/madaffald.jpg",
+      alt: "Madaffaldspose",
+    },
+  },
+  {
+    title: "Dyrestrøelse, fx kattegrus og halm fra kaniner",
+    text: "Sorteres som restaffald - genbrugspladserne i Odense tager ikke imod uhygiejnisk affald",
+    image: {
+      src: "/OdenseRenovation/images/cards/madaffald.jpg",
+      alt: "Madaffaldspose",
+    },
+  },
+  {
+    title: "Potteplanter og haveaffald",
+    text: "Jord, potteplanter og haveaffald sorteres på grenbrugsstationen",
+    image: {
+      src: "/OdenseRenovation/images/cards/madaffald.jpg",
+      alt: "Madaffaldspose",
+    },
+  },
+];
+
 export const correctCards: FlashCard[] = [
   {
     title: "Brød og kager",

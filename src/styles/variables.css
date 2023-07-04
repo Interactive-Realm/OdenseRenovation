@@ -13,6 +13,7 @@
   --clr-dark-rgb: 33, 33, 37;
   --clr-gray-rgb: 176, 177, 179;
   --clr-text-rgb: 119, 119, 119;
+  --clr-gray-2-rgb: 232, 232, 232;
 
   --clr-primary-green: rgb(var(--clr-primary-green-rgb));
   --clr-primary-green-variant: rgb(var(--clr-primary-green-variant-rgb));
@@ -27,6 +28,7 @@
   --clr-dark: rgb(var(--clr-dark-rgb));
   --clr-gray: rgb(var(--clr-gray-rgb));
   --clr-text: rgb(var(--clr-text-rgb));
+  --clr-gray-2: rgb(var(--clr-gray-2-rgb));
 
   /* Miljoestyrelsen */
   --clr-miljoestyrelsen-green-rgb: 0, 160, 75;

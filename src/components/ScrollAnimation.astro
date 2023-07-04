@@ -2,12 +2,17 @@
 interface Props {
   id: string;
   src: string;
+  containerHeight: string;
 }
 
-const { id, src } = Astro.props;
+const { id, src, containerHeight } = Astro.props;
 ---
 
-<div id={id + "-container"} class="animation" style="height: 3000px">
+<div
+  id={id + "-container"}
+  class="animation"
+  style={"height: " + containerHeight + ";"}
+>
   <lottie-player
     id={id}
     class="lottie"

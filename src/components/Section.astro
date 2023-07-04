@@ -1,0 +1,14 @@
+---
+interface Props {
+  id?: string;
+  type?: "light" | "dark" | "gray" | "primary" | "primary-variant";
+}
+
+const { id, type = "light" } = Astro.props;
+---
+
+<section id={id} class={type}>
+  <div class="wrapper">
+    <slot />
+  </div>
+</section>

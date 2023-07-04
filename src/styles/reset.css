@@ -16,9 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+main {
   background-color: var(--clr-light);
-  color: var(--clr-dark);
+  color: var(--clr-text);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
 }
 
 li {

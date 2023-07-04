@@ -60,6 +60,36 @@
   background-size: 400px;
 }
 
+.gray {
+  background-color: var(--clr-gray-2);
+  color: var(--clr-dark);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.dark {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.light {
+  background-color: var(--clr-light);
+  color: var(--clr-text);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6 {
+  color: var(--clr-dark);
+}
+
 .section-description {
   margin-bottom: 1rem;
 }
