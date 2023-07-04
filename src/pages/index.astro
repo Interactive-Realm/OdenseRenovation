@@ -1,6 +1,7 @@
 ---
 import FlashCardComp from "../components/FlashCard.astro";
 import Footer from "../components/Footer.astro";
+import Game from "../components/Game.astro";
 import Header from "../components/Header.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import { correctCards, wrongCards } from "../data/food-waste-cards.data";
@@ -93,9 +94,9 @@ import "../styles/style.css";
     </section>
 
     <!-- Game -->
-    <section id="game">
+    <section id="game" class="wrapper">
       <h2>Sorteringsspil</h2>
-      Indsæt spillet her
+      <Game />
     </section>
   </main>
 
@@ -111,7 +112,6 @@ import "../styles/style.css";
   }
 
   #game {
-    height: 100dvh;
     padding-inline: 1rem;
   }
 
