@@ -1,6 +1,7 @@
 ---
 import FlashCardComp from "../components/FlashCard.astro";
 import Footer from "../components/Footer.astro";
+import Game from "../components/Game.astro";
 import Header from "../components/Header.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import { correctCards, wrongCards } from "../data/food-waste-cards.data";
@@ -27,26 +28,31 @@ import "../styles/style.css";
         corporis eum.
       </p>
 
-      <!-- <div class="cards"> -->
-      <div>
-        <h3>Eksempler på madaffald</h3>
+      <div class="cards">
+        <!-- Correct Flashcards -->
+        <div class="cards__container green">
+          <h3>Eksempler på madaffald</h3>
+          <div class="cards__grid">
+            {
+              correctCards.map((flashCard) => (
+                <FlashCardComp flashCard={flashCard} />
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Wrong Flashcards -->
+        <div class="cards__container red">
+          <h3>Eksempler på hvad der ikke er madaffald</h3>
+          <div class="cards__grid">
+            {
+              wrongCards.map((flashCard) => (
+                <FlashCardComp flashCard={flashCard} />
+              ))
+            }
+          </div>
+        </div>
       </div>
-      <!-- Correct Flashcards -->
-      <div class="cards__container">
-        {
-          correctCards.map((flashCard) => (
-            <FlashCardComp flashCard={flashCard} />
-          ))
-        }
-      </div>
-      <div class="inserter">
-        <h3>Eksempler på hvad der ikke er madaffald</h3>
-      </div>
-      <!-- Wrong Flashcards -->
-      <div class="cards__container">
-        {wrongCards.map((flashCard) => <FlashCardComp flashCard={flashCard} />)}
-      </div>
-      <!-- </div> -->
     </section>
 
     <!-- How -->
@@ -88,9 +94,9 @@ import "../styles/style.css";
     </section>
 
     <!-- Game -->
-    <section id="game">
+    <section id="game" class="wrapper">
       <h2>Sorteringsspil</h2>
-      Indsæt spillet her
+      <Game />
     </section>
   </main>
 
@@ -101,19 +107,18 @@ import "../styles/style.css";
 <style>
   /* Section */
   #main {
-    background-image: url(/odenserenovation/images/background-pattern.png);
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
   #game {
-    height: 100dvh;
     padding-inline: 1rem;
   }
 
   #more {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    background-image: url(/odenserenovation/images/background-pattern.png);
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
@@ -122,26 +127,46 @@ import "../styles/style.css";
   }
 
   /* Cards */
-  .cards,
-  .cards__container {
-    display: grid;
-    gap: 1rem;
-    width: 50%; /* set card size */
-    margin: auto; /* center alignment */
-  }
-
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 768px) {
-    .cards__container {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .cards,
+  .cards__grid {
+    display: grid;
+    gap: 1rem;
   }
 
-  /* in between correct/incorrect cards */
-  .inserter {
-    margin-top: 1rem;
+  .cards {
+    display: grid;
+  }
+
+  .cards__container {
+    padding: 0.75rem;
+    border: 2px solid;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    max-height: min-content;
+  }
+
+  .cards__container.green {
+    background-color: rgba(var(--clr-primary-green-rgb), 0.33);
+    border-color: var(--clr-primary-green);
+  }
+
+  .cards__container.red {
+    background-color: rgba(var(--clr-primary-red-rgb), 0.33);
+    border-color: var(--clr-primary-red);
+  }
+
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
