@@ -28,28 +28,24 @@ import "../styles/style.css";
       </p>
 
       <!-- <div class="cards"> -->
-        <div>
-          <h3>Eksempler på madaffald</h2>
-        </div>
-        <!-- Correct Flashcards -->
-        <div class="cards__container">
-          {
-            correctCards.map((flashCard) => (
-              <FlashCardComp flashCard={flashCard} />
-            ))
-          }
-        </div>
-        <div class="inserter">
-          <h3>Eksempler på hvad der ikke er madaffald</h2>
-        </div>
-        <!-- Wrong Flashcards -->
-        <div class="cards__container">
-          {
-            wrongCards.map((flashCard) => (
-              <FlashCardComp flashCard={flashCard} />
-            ))
-          }
-        </div>
+      <div>
+        <h3>Eksempler på madaffald</h3>
+      </div>
+      <!-- Correct Flashcards -->
+      <div class="cards__container">
+        {
+          correctCards.map((flashCard) => (
+            <FlashCardComp flashCard={flashCard} />
+          ))
+        }
+      </div>
+      <div class="inserter">
+        <h3>Eksempler på hvad der ikke er madaffald</h3>
+      </div>
+      <!-- Wrong Flashcards -->
+      <div class="cards__container">
+        {wrongCards.map((flashCard) => <FlashCardComp flashCard={flashCard} />)}
+      </div>
       <!-- </div> -->
     </section>
 
@@ -105,7 +101,7 @@ import "../styles/style.css";
 <style>
   /* Section */
   #main {
-    background-image: url(/images/background-pattern.png);
+    background-image: url(/odenserenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
@@ -117,7 +113,7 @@ import "../styles/style.css";
   #more {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    background-image: url(/images/background-pattern.png);
+    background-image: url(/odenserenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
@@ -131,7 +127,7 @@ import "../styles/style.css";
     display: grid;
     gap: 1rem;
     width: 50%; /* set card size */
-    margin: auto;  /* center alignment */
+    margin: auto; /* center alignment */
   }
 
   .cards {
@@ -144,7 +140,7 @@ import "../styles/style.css";
     }
   }
 
-    /* in between correct/incorrect cards */
+  /* in between correct/incorrect cards */
   .inserter {
     margin-top: 1rem;
   }

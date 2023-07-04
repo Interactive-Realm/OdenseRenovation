@@ -5,7 +5,7 @@ export const correctCards: FlashCard[] = [
     title: "Brød og kager",
     text: "Brød og kage kan med fordel sorteres sammen med olie, så olien suges og ikke lægger sig i bunden af posen",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -13,16 +13,15 @@ export const correctCards: FlashCard[] = [
     title: "Sovs og fedt",
     text: "Fedt skal i madaffald. Olie kan med fordel sorteres sammen med brødskiver, så olien suges og ikke lægger sig i bunden af posen",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
   {
-    
     title: "Fisk, kød, pålæg og ben",
     text: "Alle restprodukter fra dyr, såsom sød og ben skal til madaffald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -30,7 +29,7 @@ export const correctCards: FlashCard[] = [
     title: "Grøntsager of frugt",
     text: "Alle frugter og grøntsager sorteres som madaffald - rå, kogte og skræller",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -38,7 +37,7 @@ export const correctCards: FlashCard[] = [
     title: "Ris, pasta og ost",
     text: "Osteskorper sorteres som restaffald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -46,7 +45,7 @@ export const correctCards: FlashCard[] = [
     title: "Kaffe og te",
     text: "Kaffe- og tefiltre sorteres som madaffald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -54,7 +53,7 @@ export const correctCards: FlashCard[] = [
     title: "Krydderurter i potte",
     text: "Emballage og potte sorteres som plast",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -65,7 +64,7 @@ export const wrongCards: FlashCard[] = [
     title: "Køkkenrulle",
     text: "Køkkenrulle sorteres som restaffald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -73,7 +72,7 @@ export const wrongCards: FlashCard[] = [
     title: "Dyrestrøelse, fx kattegrus og halm fra kaniner",
     text: "Sorteres som restaffald - genbrugspladserne i Odense tager ikke imod uhygiejnisk affald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -81,7 +80,7 @@ export const wrongCards: FlashCard[] = [
     title: "Madaffald i emballage",
     text: "Al emballage skal sorteres for sig og må ikke komme i madaffald",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
@@ -89,7 +88,7 @@ export const wrongCards: FlashCard[] = [
     title: "Potteplanter og haveaffald",
     text: "Jord, potteplanter og haveaffald sorteres på grenbrugsstationen",
     image: {
-      src: "/images/cards/madaffald.jpg",
+      src: "/odenserenovation/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
     },
   },
