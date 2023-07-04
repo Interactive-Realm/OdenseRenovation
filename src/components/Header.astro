@@ -19,7 +19,7 @@ interface Props {
 const { title, type, description } = Astro.props;
 ---
 
-<header id="hero" class:list={["hero", "background-pattern", type]}>
+<header id="hero" class:list={["hero", type]}>
   <div class="hero__content">
     <h1 class="hero__title">{title}</h1>
     <p>
