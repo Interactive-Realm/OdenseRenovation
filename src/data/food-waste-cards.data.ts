@@ -3,7 +3,7 @@ import type { FlashCard } from "../logic/types";
 export const correctCards: FlashCard[] = [
   {
     title: "Brød og kager",
-    text: "",
+    text: "Brød og kage kan med fordel sorteres sammen med olie, så olien suges og ikke lægger sig i bunden af posen",
     image: {
       src: "/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
@@ -20,7 +20,7 @@ export const correctCards: FlashCard[] = [
   {
     
     title: "Fisk, kød, pålæg og ben",
-    text: "",
+    text: "Alle restprodukter fra dyr, såsom sød og ben skal til madaffald",
     image: {
       src: "/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
@@ -36,7 +36,7 @@ export const correctCards: FlashCard[] = [
   },
   {
     title: "Ris, pasta og ost",
-    text: "",
+    text: "Osteskorper sorteres som restaffald",
     image: {
       src: "/images/cards/madaffald.jpg",
       alt: "Madaffaldspose",
