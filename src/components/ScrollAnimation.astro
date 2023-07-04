@@ -7,13 +7,13 @@ interface Props {
 const { id, src } = Astro.props;
 ---
 
-<div id="animation-container" style="height: 3000px">
+<div id={id + "-container"} class="animation" style="height: 3000px">
   <lottie-player
     id={id}
+    class="lottie"
     src={src}
     background="transparent"
-    speed="1"
-    style="width:100%; height: auto; position: sticky; top: 0;"></lottie-player>
+    speed="1"></lottie-player>
 </div>
 
 <script define:vars={{ id }} defer>
@@ -22,7 +22,7 @@ const { id, src } = Astro.props;
     LottieInteractivity.create({
       mode: "scroll",
       player: "#" + id,
-      container: "#animation-container",
+      container: "#" + id + "-container",
       actions: [
         {
           visibility: [0.25, 0.75],
@@ -33,3 +33,12 @@ const { id, src } = Astro.props;
     });
   });
 </script>
+
+<style>
+  .lottie {
+    max-width: 100dvw;
+    max-height: 100dvh;
+    position: sticky;
+    top: 0;
+  }
+</style>
