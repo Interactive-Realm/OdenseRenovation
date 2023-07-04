@@ -27,26 +27,31 @@ import "../styles/style.css";
         corporis eum.
       </p>
 
-      <!-- <div class="cards"> -->
-      <div>
-        <h3>Eksempler på madaffald</h3>
+      <div class="cards">
+        <!-- Correct Flashcards -->
+        <div class="cards__container">
+          <h3>Eksempler på madaffald</h3>
+          <div class="cards__grid">
+            {
+              correctCards.map((flashCard) => (
+                <FlashCardComp flashCard={flashCard} />
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Wrong Flashcards -->
+        <div class="cards__container">
+          <h3>Eksempler på hvad der ikke er madaffald</h3>
+          <div class="cards__grid">
+            {
+              wrongCards.map((flashCard) => (
+                <FlashCardComp flashCard={flashCard} />
+              ))
+            }
+          </div>
+        </div>
       </div>
-      <!-- Correct Flashcards -->
-      <div class="cards__container">
-        {
-          correctCards.map((flashCard) => (
-            <FlashCardComp flashCard={flashCard} />
-          ))
-        }
-      </div>
-      <div class="inserter">
-        <h3>Eksempler på hvad der ikke er madaffald</h3>
-      </div>
-      <!-- Wrong Flashcards -->
-      <div class="cards__container">
-        {wrongCards.map((flashCard) => <FlashCardComp flashCard={flashCard} />)}
-      </div>
-      <!-- </div> -->
     </section>
 
     <!-- How -->
@@ -101,7 +106,7 @@ import "../styles/style.css";
 <style>
   /* Section */
   #main {
-    background-image: url(/odenserenovation/images/background-pattern.png);
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
@@ -113,7 +118,7 @@ import "../styles/style.css";
   #more {
     background-color: var(--clr-dark);
     color: var(--clr-light);
-    background-image: url(/odenserenovation/images/background-pattern.png);
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
@@ -123,11 +128,18 @@ import "../styles/style.css";
 
   /* Cards */
   .cards,
-  .cards__container {
+  .cards__grid {
     display: grid;
     gap: 1rem;
-    width: 50%; /* set card size */
-    margin: auto; /* center alignment */
+  }
+
+  .cards {
+    display: grid;
+  }
+
+  .cards__container {
+    background-color: var(--clr-primary-green);
+    padding: 1rem;
   }
 
   .cards {
@@ -135,13 +147,12 @@ import "../styles/style.css";
   }
 
   @media (min-width: 768px) {
-    .cards__container {
+    .cards {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
 
-  /* in between correct/incorrect cards */
-  .inserter {
-    margin-top: 1rem;
+    .cards__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>
