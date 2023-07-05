@@ -22,7 +22,7 @@ const { id, src, containerHeight } = Astro.props;
 </div>
 
 <script define:vars={{ id }} defer>
-  let player = document.getElementById(id);
+  const player = document.getElementById(id);
   player.addEventListener("ready", () => {
     LottieInteractivity.create({
       mode: "scroll",

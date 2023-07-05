@@ -2,6 +2,7 @@
   /* Odense Renovation Colors */
   --clr-primary-green-rgb: 26, 135, 58;
   --clr-primary-green-variant-rgb: 57, 181, 74;
+  --clr-primary-light-green-rgb: 214, 240, 224;
   --clr-primary-yellow-rgb: 255, 236, 0;
   --clr-primary-red-rgb: 178, 2, 21;
   --clr-primary-blue-rgb: 75, 146, 209;
@@ -17,6 +18,7 @@
 
   --clr-primary-green: rgb(var(--clr-primary-green-rgb));
   --clr-primary-green-variant: rgb(var(--clr-primary-green-variant-rgb));
+  --clr-primary-light-green: rgb(var(--clr-primary-light-green-rgb));
   --clr-primary-yellow: rgb(var(--clr-primary-yellow-rgb));
   --clr-primary-red: rgb(var(--clr-primary-red-rgb));
   --clr-primary-blue: rgb(var(--clr-primary-blue-rgb));

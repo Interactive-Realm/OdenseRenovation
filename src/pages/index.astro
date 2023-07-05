@@ -1,9 +1,9 @@
 ---
 import FlashCard from "../components/FlashCard.astro";
 import Footer from "../components/Footer.astro";
-import Game from "../components/Game.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import Section from "../components/Section.astro";
+import WasteCalculator from "../components/WasteCalculator.astro";
 import WasteHeader from "../components/WasteHeader.astro";
 import { flashcards } from "../data/food-waste-cards.data";
 import Layout from "../layouts/Layout.astro";
@@ -22,7 +22,7 @@ import "../styles/style.css";
   <main id="main">
     <!-- How -->
     <Section>
-      <h2>Sortering</h2>
+      <h2 class="title">Sortering</h2>
       <p class="section-description">
         Madaffald udgør en betydelig del af vores affaldsstrøm, og når det ender
         på lossepladser eller forbrændingsanlæg, bidrager det til udledning af
@@ -33,7 +33,7 @@ import "../styles/style.css";
         kunstgødning, hvilket gavner både landbruget og miljøet.
       </p>
 
-      <h3>Men hvad er madaffald?</h3>
+      <h3 class="title">Men hvad er madaffald?</h3>
       <p>
         Madaffald omfatter forskellige typer af organiske materialer, der
         stammer fra madlavning og fødevareforbrug. Det kan inkludere frugt- og
@@ -45,7 +45,7 @@ import "../styles/style.css";
     </Section>
 
     <Section type="gray">
-      <h2>Test din viden</h2>
+      <h2 class="title">Test din viden</h2>
       <p class="section-description">
         Tryk på billederne for at se hvordan de skal sorteres.
       </p>
@@ -56,7 +56,7 @@ import "../styles/style.css";
 
     <!-- How -->
     <Section>
-      <h2>Madaffaldets rejse</h2>
+      <h2 class="title">Madaffaldets rejse</h2>
       <!-- TODO - Insert correct animation -->
       <ScrollAnimation
         id="lottiePlayer_RandomAnim"
@@ -67,7 +67,7 @@ import "../styles/style.css";
 
     <!-- Read more -->
     <Section id="more" type="dark">
-      <h2>Sorteringsguiden</h2>
+      <h2 class="title">Sorteringsguiden</h2>
       <p>
         Odense Renovation har lavet en
         <a href="https://www.odenserenovation.dk/sorteringsguide/"
@@ -79,7 +79,7 @@ import "../styles/style.css";
 
     <!-- Hvorfor -->
     <Section>
-      <h2>Husk også</h2>
+      <h2 class="title">Husk også</h2>
       <p>
         Sortering af madaffald er enkelt og kan gøres derhjemme eller i større
         skala i boligområder og virksomheder. Du kan bruge en speciel
@@ -90,10 +90,9 @@ import "../styles/style.css";
       </p>
     </Section>
 
-    <!-- Game -->
-    <Section id="game">
-      <h2>Sorteringsspil</h2>
-      <Game />
+    <!-- Food waste calculator -->
+    <Section>
+      <WasteCalculator id="food-waste-calculator" />
     </Section>
   </main>
 

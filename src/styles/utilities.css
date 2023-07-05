@@ -74,6 +74,15 @@
   background-size: 400px;
 }
 
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title {
+  color: var(--clr-light);
+}
+
 .light {
   background-color: var(--clr-light);
   color: var(--clr-text);
@@ -81,12 +90,12 @@
   background-size: 400px;
 }
 
-.light h1,
-.light h2,
-.light h3,
-.light h4,
-.light h5,
-.light h6 {
+.light .title,
+.light .title,
+.light .title,
+.light .title,
+.light .title,
+.light .title {
   color: var(--clr-dark);
 }
 
