@@ -105,8 +105,12 @@ const { id } = Astro.props;
     min-height: 300px;
   }
 
+  .calculator__intro,
+  .calculator__content {
+    padding: 3rem 2rem;
+  }
+
   .calculator__intro {
-    padding: 1rem;
     display: grid;
     place-content: center;
   }
@@ -119,7 +123,6 @@ const { id } = Astro.props;
     color: var(--clr-dark);
     background-color: var(--clr-gray-2);
     display: grid;
-    padding: 1rem;
   }
 
   .calculator__result-container,
