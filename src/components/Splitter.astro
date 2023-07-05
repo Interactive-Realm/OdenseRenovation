@@ -1,1 +1,18 @@
-<section></section>
+<div class="splitter">
+  <slot name="left" />
+  <slot name="right" />
+</div>
+
+<style>
+  .splitter {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .splitter {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import Section from "../components/Section.astro";
+import Splitter from "../components/Splitter.astro";
 import WasteCalculator from "../components/WasteCalculator.astro";
 import WasteHeader from "../components/WasteHeader.astro";
 import { flashcards } from "../data/food-waste-cards.data";
@@ -80,15 +81,23 @@ import "../styles/style.css";
 
     <!-- Hvorfor -->
     <Section>
-      <h2 class="title">Husk også</h2>
-      <p>
-        Sortering af madaffald er enkelt og kan gøres derhjemme eller i større
-        skala i boligområder og virksomheder. Du kan bruge en speciel
-        madaffaldsbeholder, der er designet til at opbevare affaldet, indtil det
-        bliver afhentet af renovationsarbejdere eller komposteres på stedet.
-        Sørg for at placere madaffaldet i en lukket beholder for at undgå
-        lugtgener og tiltrækning af skadedyr.
-      </p>
+      <Splitter>
+        <div slot="right">
+          <h2 class="title">Husk også</h2>
+          <p>
+            Sortering af madaffald er enkelt og kan gøres derhjemme eller i
+            større skala i boligområder og virksomheder. Du kan bruge en speciel
+            madaffaldsbeholder, der er designet til at opbevare affaldet, indtil
+            det bliver afhentet af renovationsarbejdere eller komposteres på
+            stedet. Sørg for at placere madaffaldet i en lukket beholder for at
+            undgå lugtgener og tiltrækning af skadedyr.
+          </p>
+        </div>
+
+        <div slot="left">
+          <img src="/OdenseRenovation/images/cards/madaffald.jpg" alt="" />
+        </div>
+      </Splitter>
     </Section>
 
     <!-- Food waste calculator -->
@@ -101,7 +110,7 @@ import "../styles/style.css";
       <WasteCalculator id="food-waste-calculator" />
     </Section>
 
-    <Section type="light">
+    <Section>
       <h2 class="title">Læs mere</h2>
       <Navigation />
     </Section>
