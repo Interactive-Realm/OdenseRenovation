@@ -1,6 +1,7 @@
 ---
 import FlashCard from "../components/FlashCard.astro";
 import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import Section from "../components/Section.astro";
 import WasteCalculator from "../components/WasteCalculator.astro";
@@ -91,8 +92,18 @@ import "../styles/style.css";
     </Section>
 
     <!-- Food waste calculator -->
-    <Section>
+    <Section
+      background={{
+        src: "/OdenseRenovation/images/cards/madaffald.jpg",
+        alt: "Madaffald baggrund",
+      }}
+    >
       <WasteCalculator id="food-waste-calculator" />
+    </Section>
+
+    <Section type="light">
+      <h2 class="title">Læs mere</h2>
+      <Navigation />
     </Section>
   </main>
 

@@ -12,12 +12,24 @@ import NavLink from "./NavLink.astro";
 <style>
   .waste-navigation__list {
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 400px) {
+    .waste-navigation__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .waste-navigation__list {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 
   @media (min-width: 768px) {
     .waste-navigation__list {
-      grid-template-columns: repeat(10, 10%);
+      grid-template-columns: repeat(10, 1fr);
     }
   }
 </style>
