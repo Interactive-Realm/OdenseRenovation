@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro";
 import InputRange from "./InputRange.astro";
+import Splitter from "./Splitter.astro";
 interface Props {
   id: string;
 }
@@ -9,47 +10,49 @@ const { id } = Astro.props;
 ---
 
 <div class="calculator">
-  <div class="calculator__intro dark">
-    <h2>Beregn dit madaffald</h2>
-    <p>
-      Fortæl os, hvor meget madaffald du typisk smider ud på en uge. Så kan du
-      se, hvad det kan blive til.
-    </p>
-  </div>
-
-  <div class="calculator__content">
-    <div id={id + "-page-1"} class="calculator__form-container">
-      <form id={id} class="calculator__form">
-        <InputRange
-          id={id + "-input1"}
-          type="percentage"
-          label="Hvor fyldte er dine bioposer typisk?"
-          min={0}
-          max={4}
-          minLabel="Helt tom"
-          maxLabel="Helt fuld"
-        />
-
-        <InputRange
-          id={id + "-input2"}
-          type="number"
-          label="Hvor mange poser smider du ud om ugen?"
-          min={0}
-          max={10}
-          minLabel="0 stk."
-          maxLabel="10 stk."
-        />
-
-        <Button type="primary">Beregn</Button>
-      </form>
+  <Splitter gap={false}>
+    <div class="calculator__intro dark" slot="left">
+      <h2>Beregn dit madaffald</h2>
+      <p>
+        Fortæl os, hvor meget madaffald du typisk smider ud på en uge. Så kan du
+        se, hvad det kan blive til.
+      </p>
     </div>
 
-    <div id={id + "-page-2"} class="calculator__result-container">
-      <h3>På et år sorterer din husstand</h3>
-      <p><strong id={id + "-result"}>0</strong> kg. madaffald</p>
-      <Button id={id + "-back"} type="primary" style="text">Tilbage</Button>
+    <div class="calculator__content" slot="right">
+      <div id={id + "-page-1"} class="calculator__form-container">
+        <form id={id} class="calculator__form">
+          <InputRange
+            id={id + "-input1"}
+            type="percentage"
+            label="Hvor fyldte er dine bioposer typisk?"
+            min={0}
+            max={4}
+            minLabel="Helt tom"
+            maxLabel="Helt fuld"
+          />
+
+          <InputRange
+            id={id + "-input2"}
+            type="number"
+            label="Hvor mange poser smider du ud om ugen?"
+            min={0}
+            max={10}
+            minLabel="0 stk."
+            maxLabel="10 stk."
+          />
+
+          <Button type="primary">Beregn</Button>
+        </form>
+      </div>
+
+      <div id={id + "-page-2"} class="calculator__result-container">
+        <h3>På et år sorterer din husstand</h3>
+        <p><strong id={id + "-result"}>0</strong> kg. madaffald</p>
+        <Button id={id + "-back"} type="primary" style="text">Tilbage</Button>
+      </div>
     </div>
-  </div>
+  </Splitter>
 </div>
 
 <script define:vars={{ id }} defer>
@@ -101,7 +104,6 @@ const { id } = Astro.props;
 
 <style>
   .calculator {
-    display: grid;
     min-height: 300px;
   }
 
@@ -156,11 +158,5 @@ const { id } = Astro.props;
   .form__row {
     display: grid;
     width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .calculator {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 </style>

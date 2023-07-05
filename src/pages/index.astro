@@ -1,6 +1,7 @@
 ---
 import FlashCard from "../components/FlashCard.astro";
 import Footer from "../components/Footer.astro";
+import InfoBox from "../components/InfoBox.astro";
 import Navigation from "../components/Navigation.astro";
 import ScrollAnimation from "../components/ScrollAnimation.astro";
 import Section from "../components/Section.astro";
@@ -24,26 +25,43 @@ import "../styles/style.css";
   <main id="main">
     <!-- How -->
     <Section>
-      <h2 class="title">Sortering</h2>
-      <p class="section-description">
-        Madaffald udgør en betydelig del af vores affaldsstrøm, og når det ender
-        på lossepladser eller forbrændingsanlæg, bidrager det til udledning af
-        drivhusgasser og forurener vores miljø. Ved at sortere madaffaldet og
-        sende det til kompostering i stedet for deponering eller forbrænding,
-        kan vi reducere disse negative miljøpåvirkninger. Desuden kan komposten
-        bruges til at forbedre jordens frugtbarhed og mindske behovet for
-        kunstgødning, hvilket gavner både landbruget og miljøet.
-      </p>
+      <Splitter>
+        <div slot="left">
+          <h2 class="title">Sortering</h2>
+          <p class="section-description">
+            Madaffald udgør en betydelig del af vores affaldsstrøm, og når det
+            ender på lossepladser eller forbrændingsanlæg, bidrager det til
+            udledning af drivhusgasser og forurener vores miljø. Ved at sortere
+            madaffaldet og sende det til kompostering i stedet for deponering
+            eller forbrænding, kan vi reducere disse negative miljøpåvirkninger.
+            Desuden kan komposten bruges til at forbedre jordens frugtbarhed og
+            mindske behovet for kunstgødning, hvilket gavner både landbruget og
+            miljøet.
+          </p>
 
-      <h3 class="title">Men hvad er madaffald?</h3>
-      <p>
-        Madaffald omfatter forskellige typer af organiske materialer, der
-        stammer fra madlavning og fødevareforbrug. Det kan inkludere frugt- og
-        grøntsagsrester, æggeskaller, kaffegrums, teblade, brød,
-        mejeriprodukter, kød- og fiskerester samt olie og fedt. Det er vigtigt
-        at undgå at kompostere køkkenruller, dyrestrøelse som kattegrus og halm
-        fra kaniner.
-      </p>
+          <h3 class="title">Men hvad er madaffald?</h3>
+          <p>
+            Madaffald omfatter forskellige typer af organiske materialer, der
+            stammer fra madlavning og fødevareforbrug. Det kan inkludere frugt-
+            og grøntsagsrester, æggeskaller, kaffegrums, teblade, brød,
+            mejeriprodukter, kød- og fiskerester samt olie og fedt. Det er
+            vigtigt at undgå at kompostere køkkenruller, dyrestrøelse som
+            kattegrus og halm fra kaniner.
+          </p>
+        </div>
+        <div slot="right" class="mobile-hidden">
+          <InfoBox>
+            <h3><strong>52.077</strong> tons affald</h3>
+            <p class="section-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi,
+              explicabo minus ad amet labore sunt facere? Amet, cupiditate.
+              Assumenda, necessitatibus!
+            </p>
+
+            <img src="/OdenseRenovation/images/graph-placeholder.png" alt="" />
+          </InfoBox>
+        </div>
+      </Splitter>
     </Section>
 
     <Section type="gray">
@@ -81,7 +99,7 @@ import "../styles/style.css";
 
     <!-- Hvorfor -->
     <Section>
-      <Splitter>
+      <Splitter alignVertically>
         <div slot="right">
           <h2 class="title">Husk også</h2>
           <p>

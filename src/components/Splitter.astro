@@ -1,4 +1,15 @@
-<div class="splitter">
+---
+interface Props {
+  alignVertically?: boolean;
+  gap?: boolean;
+}
+
+const { alignVertically = false, gap = true } = Astro.props;
+---
+
+<div
+  class:list={["splitter", { alignVertically: alignVertically }, { gap: gap }]}
+>
   <slot name="left" />
   <slot name="right" />
 </div>
@@ -6,8 +17,14 @@
 <style>
   .splitter {
     display: grid;
-    gap: 3rem;
+  }
+
+  .alignVertically {
     align-items: center;
+  }
+
+  .gap {
+    gap: 3rem;
   }
 
   @media (min-width: 768px) {
