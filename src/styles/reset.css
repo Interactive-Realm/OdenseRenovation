@@ -137,3 +137,14 @@ input[type="range"]::-moz-range-track {
   background: var(--clr-gray);
   border-radius: 100px;
 }
+
+/* ODENSE RENOVATION HEADER THING */
+body {
+  padding-top: var(--header-bottom-height);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: calc(var(--header-top-height)+var(--header-bottom-height));
+  }
+}

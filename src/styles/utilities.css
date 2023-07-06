@@ -1,6 +1,6 @@
 /* Utilities */
 .wrapper {
-  max-width: 70rem;
+  max-width: 84.375rem;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -101,6 +101,10 @@
 
 .section-description {
   margin-bottom: 1rem;
+}
+
+.hide {
+  transform: translateY(calc(var(--header-top-height) * -1));
 }
 
 .mobile-hidden {

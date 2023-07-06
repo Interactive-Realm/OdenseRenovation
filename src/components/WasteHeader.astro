@@ -33,7 +33,7 @@ const { title, type, description } = Astro.props;
 
 <style>
   .hero {
-    min-height: 100dvh;
+    min-height: calc(100vh-var(--header-bottom-height));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,6 +95,12 @@ const { title, type, description } = Astro.props;
   }
 
   @media (min-width: 768px) {
+    .hero {
+      min-height: calc(
+        100vh-var(--header-top-height)-var(--header-bottom-height)
+      );
+    }
+
     .hero__title {
       font-size: 5rem;
     }

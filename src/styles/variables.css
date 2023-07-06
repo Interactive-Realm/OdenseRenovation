@@ -50,6 +50,9 @@
   --clr-miljoestyrelsen-purple: rgb(var(--clr-miljoestyrelsen-purple-rgb));
   --clr-miljoestyrelsen-red: rgb(var(--clr-miljoestyrelsen-red-rgb));
   --clr-miljoestyrelsen-black: rgb(var(--clr-miljoestyrelsen-black-rgb));
+
+  --header-top-height: 45px;
+  --header-bottom-height: 86px;
 }
 
 @font-face {
