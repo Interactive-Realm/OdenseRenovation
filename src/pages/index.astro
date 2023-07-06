@@ -1,11 +1,33 @@
 ---
+import Game from "../components/Game.astro";
+import Section from "../components/Section.astro";
+import WasteNavigation from "../components/WasteNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/style.css";
 ---
 
 <Layout title="Sortering guide - Odense Renovation">
   <!-- Main -->
-  <main id="main"></main>
+  <main id="main">
+    <Section>
+      <h1>Sortering</h1>
+    </Section>
+
+    <Section>
+      <h2>Sorterings Kategorier</h2>
+      <WasteNavigation />
+    </Section>
+
+    <Section type="dark">
+      <h2>Sorterings Kategorier</h2>
+      <WasteNavigation />
+    </Section>
+
+    <Section>
+      <h2>Sorteringsspillet</h2>
+      <Game />
+    </Section>
+  </main>
 </Layout>
 
 <style>
