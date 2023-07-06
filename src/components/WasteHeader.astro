@@ -1,4 +1,6 @@
 ---
+import Breadcrumb from "./Breadcrumb.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -19,6 +21,21 @@ const { title, type, description } = Astro.props;
 ---
 
 <header id="hero" class:list={["hero", type]}>
+  <div class="breadcrumb-contaoner">
+    <Breadcrumb
+      breadcrumbs={[
+        {
+          title: "sortering",
+          link: "/OdenseRenovation/",
+        },
+        {
+          title: "madaffald",
+          link: "/OdenseRenovation/madaffald",
+        },
+      ]}
+    />
+  </div>
+
   <div class="hero__content">
     <h1 class="hero__title">{title}</h1>
     <p>

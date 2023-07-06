@@ -14,3 +14,8 @@ export type NavLink = {
     alt: string;
   };
 };
+
+export type Breadcrumb = {
+  title: string;
+  link: string;
+};

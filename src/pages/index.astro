@@ -1,6 +1,7 @@
 ---
 import Game from "../components/Game.astro";
 import Section from "../components/Section.astro";
+import Teaser from "../components/Teaser.astro";
 import WasteNavigation from "../components/WasteNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/style.css";
@@ -9,20 +10,24 @@ import "../styles/style.css";
 <Layout title="Sortering guide - Odense Renovation">
   <!-- Main -->
   <main id="main">
-    <Section>
-      <h1>Sortering</h1>
-    </Section>
+    <Teaser
+      title="Den Digitale Sorterings Brochure"
+      description=""
+      breadcrumbs={[{ title: "sortering", link: "sortering" }]}
+      image={{
+        src: "/OdenseRenovation/images/cards/madaffald.jpg",
+        alt: "Madaffald",
+      }}
+    />
 
     <Section>
-      <h2>Sorterings Kategorier</h2>
+      <h2 class="title">Sorterings Kategorier</h2>
       <WasteNavigation />
     </Section>
-
     <Section type="dark">
-      <h2>Sorterings Kategorier</h2>
-      <WasteNavigation />
+      <h2 class="title">Genbrugsstationer</h2>
+      Cool map
     </Section>
-
     <Section>
       <h2>Sorteringsspillet</h2>
       <Game />
