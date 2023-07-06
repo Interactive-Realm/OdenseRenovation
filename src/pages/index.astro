@@ -1,5 +1,6 @@
 ---
 import Game from "../components/Game.astro";
+import RecyclingStations from "../components/RecyclingStations.astro";
 import Section from "../components/Section.astro";
 import Teaser from "../components/Teaser.astro";
 import WasteNavigation from "../components/WasteNavigation.astro";
@@ -15,7 +16,7 @@ import "../styles/style.css";
       description=""
       breadcrumbs={[{ title: "sortering", link: "sortering" }]}
       image={{
-        src: "/OdenseRenovation/images/cards/madaffald.jpg",
+        src: "/OdenseRenovation/images/waste-thumbnail.png",
         alt: "Madaffald",
       }}
     />
@@ -26,7 +27,7 @@ import "../styles/style.css";
     </Section>
     <Section type="dark">
       <h2 class="title">Genbrugsstationer</h2>
-      Cool map
+      <RecyclingStations />
     </Section>
     <Section>
       <h2>Sorteringsspillet</h2>
