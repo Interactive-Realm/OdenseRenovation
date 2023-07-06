@@ -19,3 +19,8 @@ export type Breadcrumb = {
   title: string;
   link: string;
 };
+
+export type RecyclingStation = {
+  title: string;
+  location: string;
+};
