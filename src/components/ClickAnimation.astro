@@ -1,0 +1,39 @@
+---
+interface Props {
+  id: string;
+  src: string;
+  containerHeight: string;
+}
+
+const { id, src, containerHeight } = Astro.props;
+---
+
+<div
+  id={id + "-container"}
+  class="animation"
+  style={"height: " + containerHeight + ";"}
+>
+  <lottie-player
+    id={id}
+    class="lottie"
+    src={src}
+    background="transparent"
+    speed="1"></lottie-player>
+</div>
+
+<script define:vars={{ id }} defer>
+  let player = document.getElementById(id);
+  player.addEventListener("ready", () => {
+    LottieInteractivity.create({
+          mode:"cursor",
+      player: "#" + id,
+      container: "#" + id + "-container",
+          actions: [
+            {
+              type: "click",
+              forceFlag: false
+            }
+          ]
+        });
+  });
+</script>
