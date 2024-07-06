@@ -1,99 +1,188 @@
 ---
-import Navigation from "./Navigation.astro";
-interface Props {
-  title: string;
-  description: string;
-  type:
-    | "food-waste"
-    | "glass"
-    | "paper"
-    | "carton"
-    | "cardboard"
-    | "metal"
-    | "plastic"
-    | "textile"
-    | "hazardous-waste"
-    | "residual-waste";
-}
-
-const { title, type, description } = Astro.props;
 ---
 
-<header id="hero" class:list={["hero", "background-pattern", type]}>
-  <div class="hero__content">
-    <h1 class="hero__title">{title}</h1>
-    <p>
-      {description}
-    </p>
-  </div>
+<header class="header">
+  <!-- Top -->
+  <nav class="header__top">
+    <ul class="wrapper">
+      <li>
+        <a href="/">Affaldsordning i Odense</a>
+      </li>
+      <li>
+        <a href="/">Tømningskalender - mail/sms</a>
+      </li>
+      <li>
+        <a href="/">Søg job</a>
+      </li>
+      <li>
+        <a href="/">Om Odense Renovation</a>
+      </li>
+      <li>
+        <a href="/">Nyheder</a>
+      </li>
+      <li>
+        <a href="/">Åbningstider</a>
+      </li>
+    </ul>
+  </nav>
 
-  <a href="#main" class="hero__scroll-link">
-    <p>Scroll videre for mere information</p>
-  </a>
+  <!-- Bottom -->
+  <div class="header__bottom wrapper">
+    <a href="https://www.odenserenovation.dk/" class="logo">
+      <img src="/OdenseRenovation/logo.svg" alt="odense renovation logo" />
+    </a>
+    <div class="header__right">
+      <nav class="header__nav">
+        <ul>
+          <li>
+            <a href="/">Private</a>
+          </li>
+          <li>
+            <a href="/">Erhverv</a>
+          </li>
+          <li>
+            <a href="/">Institutioner og skoler</a>
+          </li>
+          <li>
+            <a href="/">Boligforening</a>
+          </li>
+          <li>
+            <a href="/" class="btn">Selvbetjening</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="mobile-nav__button">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </div>
 </header>
 
-<!-- Navigation -->
-<Navigation />
+<script>
+  const header = document.getElementsByTagName("header")[0];
+  let showHeader = true;
+  let lastScrollY = 0;
+
+  document.addEventListener("scroll", () => {
+    const docElem = document.documentElement;
+    const docBody = document.body;
+    let scrollTop = docElem["scrollTop"] || docBody["scrollTop"];
+
+    showHeader = scrollTop < lastScrollY;
+
+    // Toggle header
+    if (showHeader) {
+      header.classList.remove("hide");
+    } else {
+      header.classList.add("hide");
+    }
+
+    // Update last scroll Y
+    lastScrollY = scrollTop;
+  });
+</script>
 
 <style>
-  .hero {
-    height: 100dvh;
+  .header {
+    display: grid;
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    z-index: 9999;
+    transform: translateY(0);
+    transition: transform 150ms ease-in-out;
+    background-color: #ffffff;
+  }
+
+  .header__top {
+    background-color: var(--clr-light);
+    height: var(--header-top-height);
+  }
+
+  .header__top ul {
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.25rem;
-    position: relative;
-    color: var(--clr-light);
+    gap: 1rem;
+    font-size: 0.875rem;
   }
 
-  .hero__content {
+  .header__bottom {
+    height: var(--header-bottom-height);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
-    max-width: 40rem;
   }
 
-  .hero__logo {
-    position: absolute;
-    left: 5rem;
-    top: 5rem;
+  .header__right {
+    display: flex;
+    align-items: center;
   }
 
-  .hero__title {
-    font-size: 2rem;
-    text-transform: uppercase;
+  .logo {
+    width: 8rem;
   }
 
-  /* Elements */
-  .hero__scroll-link {
-    font-size: 1.25rem;
-    position: absolute;
-    bottom: 5rem;
-    inset-inline: auto;
+  .header__nav {
+    display: none;
+    height: 100%;
+    font-size: 1.1rem;
+    align-items: center;
   }
 
-  @media (min-width: 400px) {
-    .hero__title {
-      font-size: 3rem;
+  .header__nav > ul {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .mobile-nav__button {
+    width: 18px;
+    height: 18px;
+    display: grid;
+    cursor: pointer;
+    padding: 1rem;
+    border: 0;
+    outline: 0;
+    box-sizing: content-box;
+    background-color: transparent;
+  }
+
+  .mobile-nav__button > .line {
+    height: 2px;
+    width: 18px;
+    background-color: #212125;
+    opacity: 1;
+    display: flex;
+    transition: all 0.3s ease-out;
+  }
+
+  @media (min-width: 900px) {
+    .header__nav {
+      display: flex;
+    }
+
+    .mobile-nav__button {
+      display: none;
     }
   }
 
-  @media (min-width: 640px) {
-    .hero {
-      font-size: 1.5rem;
+  @media (max-width: 768px) {
+    .header {
+      transform: translateY(0) !important;
     }
 
-    .hero__title {
-      font-size: 4rem;
+    .header__top {
+      display: none;
     }
   }
 
   @media (min-width: 768px) {
-    .hero__title {
-      font-size: 5rem;
+    .header__nav {
+      padding-left: 2rem;
     }
   }
 </style>

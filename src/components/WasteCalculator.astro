@@ -1,0 +1,162 @@
+---
+import Button from "./Button.astro";
+import InputRange from "./InputRange.astro";
+import Splitter from "./Splitter.astro";
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div class="calculator">
+  <Splitter gap={false}>
+    <div class="calculator__intro dark" slot="left">
+      <h2>Beregn dit madaffald</h2>
+      <p>
+        Fortæl os, hvor meget madaffald du typisk smider ud på en uge. Så kan du
+        se, hvad det kan blive til.
+      </p>
+    </div>
+
+    <div class="calculator__content" slot="right">
+      <div id={id + "-page-1"} class="calculator__form-container">
+        <form id={id} class="calculator__form">
+          <InputRange
+            id={id + "-input1"}
+            type="percentage"
+            label="Hvor fyldte er dine bioposer typisk?"
+            min={0}
+            max={4}
+            minLabel="Helt tom"
+            maxLabel="Helt fuld"
+          />
+
+          <InputRange
+            id={id + "-input2"}
+            type="number"
+            label="Hvor mange poser smider du ud om ugen?"
+            min={0}
+            max={10}
+            minLabel="0 stk."
+            maxLabel="10 stk."
+          />
+
+          <Button type="primary">Beregn</Button>
+        </form>
+      </div>
+
+      <div id={id + "-page-2"} class="calculator__result-container">
+        <h3>På et år sorterer din husstand</h3>
+        <p><strong id={id + "-result"}>0</strong> kg. madaffald</p>
+        <Button id={id + "-back"} type="primary" style="text">Tilbage</Button>
+      </div>
+    </div>
+  </Splitter>
+</div>
+
+<script define:vars={{ id }} defer>
+  const form = document.getElementById(id);
+  const input1 = document.getElementById(id + "-input1");
+  const input2 = document.getElementById(id + "-input2");
+  const result = document.getElementById(id + "-result");
+  const backButton = document.getElementById(id + "-back");
+  const page1 = document.getElementById(id + "-page-1");
+  const page2 = document.getElementById(id + "-page-2");
+
+  let currentPage = 0;
+
+  const togglePage = () => {
+    if (currentPage === 0) {
+      currentPage = 1;
+    } else if (currentPage === 1) {
+      currentPage = 0;
+    }
+
+    showCurrentPage();
+  };
+
+  const showCurrentPage = () => {
+    if (currentPage === 0) {
+      page1.style = "display: grid;";
+      page2.style = "display: none;";
+    } else if (currentPage === 1) {
+      page1.style = "display: none;";
+      page2.style = "display: grid;";
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    result.innerText = parseInt(input1.value) * parseInt(input2.value) * 52;
+    togglePage();
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    form.addEventListener("submit", handleSubmit);
+  });
+  backButton.addEventListener("click", () => {
+    togglePage();
+  });
+
+  showCurrentPage();
+</script>
+
+<style>
+  .calculator {
+    min-height: 300px;
+  }
+
+  .calculator__intro,
+  .calculator__content {
+    padding: 3rem 2rem;
+  }
+
+  .calculator__intro {
+    display: grid;
+    place-content: center;
+  }
+
+  .calculator__intro h2 {
+    color: var(--clr-light);
+  }
+
+  .calculator__content {
+    color: var(--clr-dark);
+    background-color: var(--clr-gray-2);
+    display: grid;
+  }
+
+  .calculator__result-container,
+  .calculator__form {
+    text-align: center;
+    align-items: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .calculator__result-container {
+    place-content: center;
+  }
+
+  .calculator__result-container p {
+    font-size: 1.5rem;
+  }
+
+  .calculator__result-container strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--clr-primary-green);
+  }
+
+  .calculator__form {
+    display: grid;
+    gap: 2rem;
+    justify-items: left;
+  }
+
+  .form__row {
+    display: grid;
+    width: 100%;
+  }
+</style>

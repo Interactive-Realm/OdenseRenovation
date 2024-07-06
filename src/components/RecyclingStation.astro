@@ -1,0 +1,40 @@
+---
+import type { RecyclingStation } from "../logic/types";
+interface Props {
+  recyclingStation: RecyclingStation;
+  active?: boolean;
+}
+
+const { recyclingStation, active = false } = Astro.props;
+---
+
+<li class:list={["recycling-station", { active: active }]}>
+  <h3>{recyclingStation.title}</h3>
+  <p>{recyclingStation.location}</p>
+</li>
+
+<style>
+  .recycling-station {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    padding: 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .recycling-station:hover {
+    background-color: var(--clr-gray-2);
+  }
+
+  .recycling-station h3 {
+    margin: 0;
+  }
+
+  .recycling-station p {
+    color: var(--clr-text);
+  }
+
+  .active h3 {
+    color: var(--clr-primary-green);
+  }
+</style>

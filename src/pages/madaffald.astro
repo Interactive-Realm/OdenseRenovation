@@ -1,0 +1,170 @@
+---
+import FlashCard from "../components/FlashCard.astro";
+import InfoBox from "../components/InfoBox.astro";
+import Navigation from "../components/Navigation.astro";
+import ScrollAnimation from "../components/ScrollAnimation.astro";
+import ClickAnimation from "../components/ClickAnimation.astro";
+import Section from "../components/Section.astro";
+import Splitter from "../components/Splitter.astro";
+import WasteCalculator from "../components/WasteCalculator.astro";
+import WasteHeader from "../components/WasteHeader.astro";
+import { flashcards } from "../data/food-waste-cards.data";
+import Layout from "../layouts/Layout.astro";
+import "../styles/style.css";
+---
+
+<Layout title="Sortering guide - Odense Renovation">
+  <!-- Header -->
+  <WasteHeader
+    title="Madaffald"
+    type="food-waste"
+    description="At sortere madaffald er en vigtig og ansvarlig handling, der kan bidrage til at reducere miljøpåvirkningen og fremme bæredygtighed."
+  />
+
+  <!-- Main -->
+  <main id="main">
+    <!-- How -->
+    <Section>
+      <Splitter>
+        <div slot="left">
+          <h2 class="title">Sortering</h2>
+          <p class="section-description">
+            Madaffald udgør en betydelig del af vores affaldsstrøm, og når det
+            ender på lossepladser eller forbrændingsanlæg, bidrager det til
+            udledning af drivhusgasser og forurener vores miljø. Ved at sortere
+            madaffaldet og sende det til kompostering i stedet for deponering
+            eller forbrænding, kan vi reducere disse negative miljøpåvirkninger.
+            Desuden kan komposten bruges til at forbedre jordens frugtbarhed og
+            mindske behovet for kunstgødning, hvilket gavner både landbruget og
+            miljøet.
+          </p>
+
+          <h3 class="title">Men hvad er madaffald?</h3>
+          <p>
+            Madaffald omfatter forskellige typer af organiske materialer, der
+            stammer fra madlavning og fødevareforbrug. Det kan inkludere frugt-
+            og grøntsagsrester, æggeskaller, kaffegrums, teblade, brød,
+            mejeriprodukter, kød- og fiskerester samt olie og fedt. Det er
+            vigtigt at undgå at kompostere køkkenruller, dyrestrøelse som
+            kattegrus og halm fra kaniner.
+          </p>
+        </div>
+        <div slot="right" class="mobile-hidden">
+          <InfoBox>
+            <h3><strong>52.077</strong> tons affald</h3>
+            <p class="section-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi,
+              explicabo minus ad amet labore sunt facere? Amet, cupiditate.
+              Assumenda, necessitatibus!
+            </p>
+
+            <img src="/OdenseRenovation/images/graph-placeholder.png" alt="" />
+          </InfoBox>
+        </div>
+      </Splitter>
+    </Section>
+
+    <Section type="gray">
+      <h2 class="title">Test din viden</h2>
+      <p class="section-description">
+        Tryk på billederne for at se hvordan de skal sorteres.
+      </p>
+      <div class="flashcards">
+        {flashcards.map((flashCard) => <FlashCard flashCard={flashCard} />)}
+      </div>
+    </Section>
+
+    <!-- How -->
+    <Section>
+      <h2 class="title">Madaffaldets rejse</h2>
+      <!-- TODO - Insert correct animation -->
+      <ClickAnimation
+        id="lottiePlayer_RandomAnim"
+        src="https://assets9.lottiefiles.com/packages/lf20_rwBCV7ZGAp.json"
+        containerHeight="80dvh"
+      />
+    </Section>
+
+    <!-- Read more -->
+    <Section id="more" type="dark">
+      <h2 class="title">Sorteringsguiden</h2>
+      <p>
+        Odense Renovation har lavet en
+        <a href="https://www.odenserenovation.dk/sorteringsguide/"
+          >sorteringsguide</a
+        >, hvor du kan finde ud af, hvordan du skal sortere forskellige mad- og
+        fødevarer.
+      </p>
+    </Section>
+
+    <!-- Hvorfor -->
+    <Section>
+      <Splitter alignVertically>
+        <div slot="right">
+          <h2 class="title">Husk også</h2>
+          <p>
+            Sortering af madaffald er enkelt og kan gøres derhjemme eller i
+            større skala i boligområder og virksomheder. Du kan bruge en speciel
+            madaffaldsbeholder, der er designet til at opbevare affaldet, indtil
+            det bliver afhentet af renovationsarbejdere eller komposteres på
+            stedet. Sørg for at placere madaffaldet i en lukket beholder for at
+            undgå lugtgener og tiltrækning af skadedyr.
+          </p>
+        </div>
+
+        <div slot="left">
+          <img src="/OdenseRenovation/images/cards/madaffald.jpg" alt="" />
+        </div>
+      </Splitter>
+    </Section>
+
+    <!-- Food waste calculator -->
+    <Section
+      background={{
+        src: "/OdenseRenovation/images/cards/madaffald.jpg",
+        alt: "Madaffald baggrund",
+      }}
+    >
+      <WasteCalculator id="food-waste-calculator" />
+    </Section>
+
+    <Section>
+      <h2 class="title">Læs mere</h2>
+      <Navigation />
+    </Section>
+  </main>
+</Layout>
+
+<style>
+  /* Section */
+  #main {
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
+    background-size: 400px;
+  }
+
+  #game {
+    padding-inline: 1rem;
+  }
+
+  #more p {
+    max-width: 40rem;
+  }
+
+  /* Cards */
+  .flashcards {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 400px) {
+    .flashcards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .flashcards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

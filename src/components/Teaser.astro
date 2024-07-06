@@ -1,0 +1,52 @@
+---
+import type { Breadcrumb } from "../logic/types";
+import BreadcrumbComp from "./Breadcrumb.astro";
+import Splitter from "./Splitter.astro";
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbs: Breadcrumb[];
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
+const { title, description, breadcrumbs, image } = Astro.props;
+---
+
+<header id="hero" class="light">
+  <Splitter alignVertically>
+    <div class="hero__left" slot="left">
+      <div class="breadcrumb-container">
+        <BreadcrumbComp breadcrumbs={breadcrumbs} />
+      </div>
+      <h1 class="title">{title}</h1>
+      <p>{description}</p>
+    </div>
+    <div class="hero__right" slot="right">
+      <img src={image.src} alt={image.alt} slot="right" />
+    </div>
+  </Splitter>
+</header>
+
+<style>
+  #hero {
+    max-width: 1350px;
+    margin-inline: auto;
+    display: grid;
+    padding-inline: 1rem;
+    position: relative;
+  }
+
+  .breadcrumb-container {
+    margin-block: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .breadcrumb-container {
+      position: absolute;
+      top: 2rem;
+    }
+  }
+</style>

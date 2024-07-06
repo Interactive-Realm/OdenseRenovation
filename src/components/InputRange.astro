@@ -1,0 +1,99 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  min: number;
+  max: number;
+  minLabel?: string;
+  maxLabel?: string;
+  type: "percentage" | "number";
+}
+
+const { id, label, min, max, minLabel, maxLabel, type } = Astro.props;
+---
+
+<div class="input-range">
+  <label for={id}>{label}</label>
+  <div class="input-range__container">
+    <button id={id + "-min"} type="button" class="left">{minLabel}</button>
+    <div class="input-range__input-container">
+      <input id={id} class="input" type="range" min={min} max={max} />
+      <span id={id + "-bubble"}></span>
+    </div>
+    <button id={id + "-max"} type="button" class="right">{maxLabel}</button>
+  </div>
+</div>
+
+<script define:vars={{ id, type }} defer>
+  const slider = document.getElementById(id);
+  const minButton = document.getElementById(id + "-min");
+  const maxButton = document.getElementById(id + "-max");
+  const bubble = document.getElementById(id + "-bubble");
+
+  const updateValue = () => {
+    const ratio = (slider.value - slider.min) / (slider.max - slider.min);
+    const percentage = ratio * 100;
+    const left = percentage;
+    bubble.style.left = left + "%";
+
+    // Update bubble text
+    if (type === "percentage") {
+      bubble.innerText = percentage + "%";
+    } else {
+      bubble.innerText = slider.value;
+    }
+  };
+  slider.addEventListener("input", updateValue);
+
+  minButton.addEventListener("click", (e) => {
+    slider.value--;
+    updateValue();
+  });
+  maxButton.addEventListener("click", (e) => {
+    slider.value++;
+    updateValue();
+  });
+
+  updateValue();
+</script>
+
+<style>
+  .input-range {
+    display: grid;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .input-range__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .input-range__input-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .input-range__input-container span {
+    position: absolute;
+    top: 1.5rem;
+  }
+
+  .input-range__container button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 2rem;
+    text-align: center;
+    left: 0;
+  }
+
+  .input-range__container button.left {
+    padding-right: 0.5rem;
+  }
+
+  .input-range__container button.right {
+    padding-left: 0.5rem;
+  }
+</style>

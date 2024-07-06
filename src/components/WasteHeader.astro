@@ -1,0 +1,125 @@
+---
+import Breadcrumb from "./Breadcrumb.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  type:
+    | "food-waste"
+    | "glass"
+    | "paper"
+    | "carton"
+    | "cardboard"
+    | "metal"
+    | "plastic"
+    | "textile"
+    | "hazardous-waste"
+    | "residual-waste";
+}
+
+const { title, type, description } = Astro.props;
+---
+
+<header id="hero" class:list={["hero", type]}>
+  <div class="breadcrumb-contaoner">
+    <Breadcrumb
+      breadcrumbs={[
+        {
+          title: "sortering",
+          link: "/OdenseRenovation/",
+        },
+        {
+          title: "madaffald",
+          link: "/OdenseRenovation/madaffald",
+        },
+      ]}
+    />
+  </div>
+
+  <div class="hero__content">
+    <h1 class="hero__title">{title}</h1>
+    <p>
+      {description}
+    </p>
+  </div>
+
+  <a href="#main" class="hero__scroll-link">
+    <p>Scroll videre for mere information</p>
+  </a>
+</header>
+
+<style>
+  .hero {
+    min-height: calc(100vh-var(--header-bottom-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.25rem;
+    position: relative;
+    color: var(--clr-light);
+    background-size: cover;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ),
+      url("/OdenseRenovation/images/frugt-groentsager-broccoli-kaal-guleroedder-aubergine-peberfrugt.jpg");
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 40rem;
+  }
+
+  .hero__logo {
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  /* Elements */
+  .hero__scroll-link {
+    font-size: 1.25rem;
+    position: absolute;
+    bottom: 5rem;
+    inset-inline: auto;
+  }
+
+  @media (min-width: 400px) {
+    .hero__title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .hero {
+      font-size: 1.5rem;
+    }
+
+    .hero__title {
+      font-size: 4rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      min-height: calc(
+        100vh-var(--header-top-height)-var(--header-bottom-height)
+      );
+    }
+
+    .hero__title {
+      font-size: 5rem;
+    }
+  }
+</style>

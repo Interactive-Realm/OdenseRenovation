@@ -16,9 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+main {
   background-color: var(--clr-light);
-  color: var(--clr-dark);
+  color: var(--clr-text);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
 }
 
 li {
@@ -38,7 +40,6 @@ h5,
 h6 {
   font-family: neoSansIntel, Helvetica, Arial, sans-serif;
   word-wrap: break-word;
-  margin-bottom: 1rem;
 }
 
 section,
@@ -53,4 +54,96 @@ p a {
 
 p {
   line-height: 1.875rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+strong {
+  color: var(--clr-primary-green);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+/* Input range */
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 3px solid var(--clr-light);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100px;
+  background: var(--clr-primary-green);
+  cursor: pointer;
+  margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb {
+  border: 3px solid var(--clr-light);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100px;
+  background: var(--clr-primary-green);
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb {
+  border: 3px solid var(--clr-light);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100px;
+  background: var(--clr-primary-green);
+  cursor: pointer;
+}
+
+/* Range track */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.4rem;
+  cursor: pointer;
+  background: var(--clr-gray);
+  border-radius: 100px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 0.4rem;
+  cursor: pointer;
+  background: var(--clr-gray);
+  border-radius: 100px;
+}
+
+/* ODENSE RENOVATION HEADER THING */
+body {
+  padding-top: var(--header-bottom-height);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: calc(var(--header-top-height)+var(--header-bottom-height));
+  }
 }

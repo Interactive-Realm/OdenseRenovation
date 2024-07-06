@@ -22,28 +22,18 @@ const { id, src, containerHeight } = Astro.props;
 </div>
 
 <script define:vars={{ id }} defer>
-  const player = document.getElementById(id);
+  let player = document.getElementById(id);
   player.addEventListener("ready", () => {
     LottieInteractivity.create({
-      mode: "scroll",
+          mode:"cursor",
       player: "#" + id,
       container: "#" + id + "-container",
-      actions: [
-        {
-          visibility: [0.25, 0.75],
-          type: "seek",
-          frames: [0, 117],
-        },
-      ],
-    });
+          actions: [
+            {
+              type: "click",
+              forceFlag: false
+            }
+          ]
+        });
   });
 </script>
-
-<style>
-  .lottie {
-    max-width: 100dvw;
-    max-height: 100dvh;
-    position: sticky;
-    top: 0;
-  }
-</style>

@@ -1,6 +1,6 @@
 /* Utilities */
 .wrapper {
-  max-width: 70rem;
+  max-width: 84.375rem;
   margin-inline: auto;
   padding-inline: 1rem;
 }
@@ -56,10 +56,67 @@
 }
 
 .background-pattern {
-  background-image: url(/images/background-pattern.png);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
   background-size: 400px;
 }
 
+.gray {
+  background-color: var(--clr-gray-2);
+  color: var(--clr-dark);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.dark {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title,
+.dark .title {
+  color: var(--clr-light);
+}
+
+.light {
+  background-color: var(--clr-light);
+  color: var(--clr-text);
+  background-image: url(/OdenseRenovation/images/background-pattern.png);
+  background-size: 400px;
+}
+
+.light .title,
+.light .title,
+.light .title,
+.light .title,
+.light .title,
+.light .title {
+  color: var(--clr-dark);
+}
+
 .section-description {
+  margin-bottom: 1rem;
+}
+
+.hide {
+  transform: translateY(calc(var(--header-top-height) * -1));
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-hidden {
+    display: block;
+  }
+}
+
+.title {
   margin-bottom: 1rem;
 }

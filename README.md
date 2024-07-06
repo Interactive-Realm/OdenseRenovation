@@ -16,7 +16,17 @@ To edit the flashcards goto `src/data/food-waste-cards.data.ts`.
 
 To edit the index page go to `src/pages/index.astro`. This will build to `index.html`.
 
-## Development
+## Workflow
+
+### Setup
+
+Install dependencies to start developing.
+
+```bash
+npm install
+```
+
+### Development
 
 Run the following command to start the dev server and see changes while editing.
 
@@ -24,7 +34,7 @@ Run the following command to start the dev server and see changes while editing.
 npm run dev
 ```
 
-## Production
+### Production
 
 Run the following command to build the website. The build can then be found in the `dist` folder.
 

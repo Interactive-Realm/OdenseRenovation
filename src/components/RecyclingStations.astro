@@ -1,0 +1,68 @@
+---
+import { recyclingStations } from "../data/recycling-stations.data";
+import RecyclingStation from "./RecyclingStation.astro";
+---
+
+<div class="recycling-station-container">
+  <ul class="recycling-station__list">
+    {
+      recyclingStations.map((recyclingStation, index) => (
+        <RecyclingStation
+          recyclingStation={recyclingStation}
+          active={index === 0}
+        />
+      ))
+    }
+  </ul>
+  <div class="recycling-station__information">
+    <div class="recycling-station__data">
+      <h3>Bullertup 84 B, Seden</h3>
+    </div>
+    <img
+      src="/OdenseRenovation/images/map-placeholder.png"
+      alt="Placeholder map"
+    />
+  </div>
+</div>
+
+<style>
+  .recycling-station-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .recycling-station__list {
+    display: none;
+  }
+
+  .recycling-station__information {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    overflow: hidden;
+  }
+
+  .recycling-station__information img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .recycling-station__data {
+    padding: 1rem;
+  }
+
+  @media (min-width: 960px) {
+    .recycling-station-container {
+      flex-direction: row;
+    }
+
+    .recycling-station__list {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      min-width: max-content;
+      gap: 0;
+    }
+  }
+</style>

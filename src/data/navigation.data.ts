@@ -2,72 +2,72 @@ import type { NavLink } from "../logic/types";
 
 export const navLinks: NavLink[] = [
   {
-    href: "/affaldstyper/madaffald",
+    href: "/OdenseRenovation/madaffald",
     image: {
-      src: "/images/icons/food-waste-icon.jpg",
+      src: "/OdenseRenovation/images/icons/food-waste-icon.jpg",
       alt: "Madaffald piktugram",
     },
   },
   {
-    href: "/affaldstyper/glas",
+    href: "/OdenseRenovation/affaldstyper/glas",
     image: {
-      src: "/images/icons/glass-icon.jpg",
+      src: "/OdenseRenovation/images/icons/glass-icon.jpg",
       alt: "Glas piktugram",
     },
   },
   {
-    href: "/affaldstyper/papir",
+    href: "/OdenseRenovation/affaldstyper/papir",
     image: {
-      src: "/images/icons/paper-icon.jpg",
+      src: "/OdenseRenovation/images/icons/paper-icon.jpg",
       alt: "Papir piktugram",
     },
   },
   {
-    href: "/affaldstyper/mad-og-drikkekartoner",
+    href: "/OdenseRenovation/affaldstyper/mad-og-drikkekartoner",
     image: {
-      src: "/images/icons/carton-icon.jpg",
+      src: "/OdenseRenovation/images/icons/carton-icon.jpg",
       alt: "Mad- og drikkekarton piktugram",
     },
   },
   {
-    href: "/affaldstyper/pap",
+    href: "/OdenseRenovation/affaldstyper/pap",
     image: {
-      src: "/images/icons/cardboard-icon.jpg",
+      src: "/OdenseRenovation/images/icons/cardboard-icon.jpg",
       alt: "Pap piktugram",
     },
   },
   {
-    href: "/affaldstyper/metal",
+    href: "/OdenseRenovation/affaldstyper/metal",
     image: {
-      src: "/images/icons/metal-icon.jpg",
+      src: "/OdenseRenovation/images/icons/metal-icon.jpg",
       alt: "Metal piktugram",
     },
   },
   {
-    href: "/affaldstyper/plast",
+    href: "/OdenseRenovation/affaldstyper/plast",
     image: {
-      src: "/images/icons/plast-icon.jpg",
+      src: "/OdenseRenovation/images/icons/plast-icon.jpg",
       alt: "Plast piktugram",
     },
   },
   {
-    href: "/affaldstyper/tekstilaffald",
+    href: "/OdenseRenovation/affaldstyper/tekstilaffald",
     image: {
-      src: "/images/icons/textile-icon.jpg",
+      src: "/OdenseRenovation/images/icons/textile-icon.jpg",
       alt: "Tekstilaffald piktugram",
     },
   },
   {
-    href: "/affaldstyper/farligt-affald",
+    href: "/OdenseRenovation/affaldstyper/farligt-affald",
     image: {
-      src: "/images/icons/hazardous-waste-icon.jpg",
+      src: "/OdenseRenovation/images/icons/hazardous-waste-icon.jpg",
       alt: "Farligt affald piktugram",
     },
   },
   {
-    href: "/affaldstyper/restaffald",
+    href: "/OdenseRenovation/affaldstyper/restaffald",
     image: {
-      src: "/images/icons/residual-waste-icon.jpg",
+      src: "/OdenseRenovation/images/icons/residual-waste-icon.jpg",
       alt: "Restaffald piktugram",
     },
   },

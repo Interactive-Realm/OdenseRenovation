@@ -1,119 +1,50 @@
 ---
-import FlashCardComp from "../components/FlashCard.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import ScrollAnimation from "../components/ScrollAnimation.astro";
-import { correctCards, wrongCards } from "../data/food-waste-cards.data";
+import Game from "../components/Game.astro";
+import RecyclingStations from "../components/RecyclingStations.astro";
+import Section from "../components/Section.astro";
+import Teaser from "../components/Teaser.astro";
+import WasteNavigation from "../components/WasteNavigation.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/style.css";
 ---
 
-<Layout title="Madaffald | Odense Renovation">
-  <!-- Header -->
-  <Header
-    title="Madaffald"
-    type="food-waste"
-    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quo? Minima praesentium accusamus molestiae quasi saepe doloremque debitis corporis eum."
-  />
-
+<Layout title="Sortering guide - Odense Renovation">
   <!-- Main -->
   <main id="main">
-    <!-- How -->
-    <section class="wrapper">
-      <h2>Sortering</h2>
-      <p class="section-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quo?
-        Minima praesentium accusamus molestiae quasi saepe doloremque debitis
-        corporis eum.
-      </p>
+    <Teaser
+      title="Den Digitale Sorterings Brochure"
+      description=""
+      breadcrumbs={[{ title: "sortering", link: "sortering" }]}
+      image={{
+        src: "/OdenseRenovation/images/waste-thumbnail.png",
+        alt: "Madaffald",
+      }}
+    />
 
-      <div class="cards">
-        <!-- Correct Flashcards -->
-        <div class="cards__container">
-          {
-            correctCards.map((flashCard) => (
-              <FlashCardComp flashCard={flashCard} />
-            ))
-          }
-        </div>
-
-        <!-- Wrong Flashcards -->
-        <div class="cards__container">
-          {
-            wrongCards.map((flashCard) => (
-              <FlashCardComp flashCard={flashCard} />
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- How -->
-    <section class="wrapper">
-      <h2>Madaffaldets rejse</h2>
-      <!-- TODO - Insert correct animation -->
-      <ScrollAnimation
-        id="lottiePlayer_RandomAnim"
-        src="https://assets4.lottiefiles.com/packages/lf20_15vyYQNGMX.json"
-      />
-    </section>
-
-    <!-- Read more -->
-    <section id="more">
-      <div class="wrapper">
-        <h2>Sorteringsguiden</h2>
-        <p>
-          Odense Renovation har lavet en
-          <a href="https://www.odenserenovation.dk/sorteringsguide/"
-            >sorteringsguide</a
-          >, hvor du kan finde ud af, hvordan du skal sortere forskellige mad-
-          og fødevarer.
-        </p>
-      </div>
-    </section>
-
-    <!-- Hvorfor -->
-    <section class="wrapper">
-      <h2>Husk også</h2>
-      <p>
-        Når du sorterer madaffald bidrager du med, at vi bruger færre nye
-        ressourcer.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quo?
-        Minima praesentium accusamus molestiae quasi saepe doloremque debitis
-        corporis eum.
-      </p>
-    </section>
-
-    <!-- Game -->
-    <section id="game">
-      <h2>Sorteringsspil</h2>
-      Indsæt spillet her
-    </section>
+    <Section>
+      <h2 class="title">Sorterings Kategorier</h2>
+      <WasteNavigation />
+    </Section>
+    <Section type="dark">
+      <h2 class="title">Genbrugsstationer</h2>
+      <RecyclingStations />
+    </Section>
+    <Section>
+      <h2 class="title">Sorteringsspillet</h2>
+      <Game />
+    </Section>
   </main>
-
-  <!-- Footer -->
-  <Footer />
 </Layout>
 
 <style>
   /* Section */
   #main {
-    background-image: url(/images/background-pattern.png);
+    background-image: url(/OdenseRenovation/images/background-pattern.png);
     background-size: 400px;
   }
 
   #game {
-    height: 100dvh;
     padding-inline: 1rem;
-  }
-
-  #more {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-    background-image: url(/images/background-pattern.png);
-    background-size: 400px;
   }
 
   #more p {
@@ -121,19 +52,20 @@ import "../styles/style.css";
   }
 
   /* Cards */
-  .cards,
-  .cards__container {
+  .flashcards {
     display: grid;
     gap: 1rem;
   }
 
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 400px) {
+    .flashcards {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 768px) {
-    .cards__container {
-      grid-template-columns: repeat(2, 1fr);
+    .flashcards {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>

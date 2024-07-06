@@ -1,1 +1,35 @@
-<section></section>
+---
+interface Props {
+  alignVertically?: boolean;
+  gap?: boolean;
+}
+
+const { alignVertically = false, gap = true } = Astro.props;
+---
+
+<div
+  class:list={["splitter", { alignVertically: alignVertically }, { gap: gap }]}
+>
+  <slot name="left" />
+  <slot name="right" />
+</div>
+
+<style>
+  .splitter {
+    display: grid;
+  }
+
+  .alignVertically {
+    align-items: center;
+  }
+
+  .gap {
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .splitter {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

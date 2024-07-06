@@ -12,7 +12,13 @@ import NavLink from "./NavLink.astro";
 <style>
   .waste-navigation__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 300px) {
+    .waste-navigation__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 400px) {
@@ -21,15 +27,15 @@ import NavLink from "./NavLink.astro";
     }
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 450px) {
     .waste-navigation__list {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     .waste-navigation__list {
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
   }
 </style>

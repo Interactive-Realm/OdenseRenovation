@@ -1,0 +1,40 @@
+---
+interface Props {
+  id?: string;
+  type?: "primary" | "gray" | "dark" | "light";
+  style?: "solid" | "text";
+}
+
+const { id = "", type = "primary", style = "solid" } = Astro.props;
+---
+
+<button id={id} class:list={[type, style]}>
+  <slot />
+</button>
+
+<style>
+  button {
+    cursor: pointer;
+    border: 0;
+  }
+  .solid {
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 1.75rem;
+  }
+
+  .solid.primary {
+    background-color: #1a873a;
+    color: var(--clr-light);
+    box-shadow: 0 2px 0 0 #167231;
+  }
+
+  .text {
+    color: var(--clr-primary-green);
+    background-color: transparent;
+  }
+  .text:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+</style>
